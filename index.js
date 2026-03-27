@@ -1,4 +1,5 @@
-// // Δημιουργείς ένα var που αποθηκεύει το όνομα που θα δώσει ο χρήστης
+// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΚΑΝΕΙ ΚΕΦΑΛΑΙ ΤΟ 1ο ΓΡΑΜΜΑ ΚΑΙ ΟΛΑ ΤΑ ΥΠΟΛΟΙΠΑ ΠΕΖΑ
+// Δημιουργείς ένα var που αποθηκεύει το όνομα που θα δώσει ο χρήστης
 // var name = prompt("What is your name?");
 
 // // Απομονώνεις το πρώτο γράμμα του ονόματος
@@ -19,34 +20,11 @@
 // // Εμφανίζεις το αποτέλεσμα
 // alert("Hello " + capitalisedName);
 
-/* Πρόγραμμα που γράφει πόσα μπουκάλια γάλα αγοράζει το ρομπότ 
-function getMilk(money){
-    console.log("leaveHouse");
-    console.log("moveRight");
-    console.log("moveRight");
-    console.log("moveuP");
-    console.log("moveuP");
-    console.log("moveuP");
-    console.log("moveuP");
-    console.log("moveRight");
-    console.log("moveRight");
-    var buyBottlesMilk = Math.floor(money / 1.5);
-    console.log("buy " + buyBottlesMilk +" bottles of milk");
-    console.log("moveLeft");
-    console.log("moveLeft");
-    console.log("moveDown");
-    console.log("moveDown");
-    console.log("moveDown");
-    console.log("moveDown");
-    console.log("moveLeft");
-    console.log("moveLeft");
-    console.log("enterHouse");
-}
 
-getMilk(5);
-*/
 
-// Πρόγραμμα που εμφανίζει ανάλογα με την ηλικία σου πόσους μήνες/εβδομάδες/μέρες μένουν μέχρι να φτάσεις 90 χρονών
+
+// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΜΦΑΝΙΖΕΙ ΑΝΑΛΟΓΑ ΜΕ ΤΗΝ ΗΛΙΚΙΑ ΣΟΥ ΠΟΣΟ ΧΡΟΝΟ ΕΧΕΙΣ ΜΕΧΡΙ ΤΑ 90 
+
 /*
 function lifeInWeeks (age){
     var age = prompt("What is your age?");
@@ -60,7 +38,9 @@ function lifeInWeeks (age){
 lifeInWeeks();
 */
 
-/* Πρόγραμμα που γράφει πόσα μπουκάλια γάλα αγοράζει το ρομπότ και υπολογίζει τα ρέστα
+
+
+/* ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΓΡΑΦΕΙ ΠΟΣΑ ΜΠΟΥΚΑΛΙΑ ΓΑΛΑ ΑΓΟΡΑΖΕΙ ΤΟ ΡΟΜΠΟΤ ΚΑΙ ΥΠΟΛΟΓΙΖΕΙ ΤΑ ΡΕΣΤΑ
 
 function getMilk(money){
     console.log("leaveHouse");
@@ -106,7 +86,6 @@ function calcChange(startingAmount, costPerBottle){
     return change;
 }
 
-
 // εμφανίζει το αποτέλεσμα με την 1 συνάρτηση
 getMilk(5);
 
@@ -115,11 +94,13 @@ console.log("Hello sir, here is your " + getMilk(10) + " change");
 */
 
 
-//BMI calculator με function
+
+//BMI CALCULATOR ME FUNCTION
 
 //Create your function below this line.
 //The first parameter should be the weight and the second should be the height.
 
+/*
 function bmiCalculator (weight, height) {
     var bmi = Math.round(weight/(height*height));
     
@@ -135,6 +116,7 @@ function bmiCalculator (weight, height) {
 }
 var bmi=bmiCalculator(65, 1.8);
 console.log(bmi);
+*/
 
 /* If my weight is 65Kg and my height is 1.8m, I should be able to call your function like this:
 
@@ -143,3 +125,28 @@ var bmi = bmiCalculator(65, 1.8);
 bmi should equal 20 when it's rounded to the nearest whole number.
 
 */
+
+
+
+function isLeap(year) {
+    
+/**************Don't change the code above****************/    
+    
+    //Write your code here.    
+    if(year % 4 === 0){
+        if(year % 100 === 0){
+            if(year % 400 === 0){
+                return "Leap year."
+            }else{
+                return "Not leap year."
+            }
+        }else{
+            return "Leap year."
+        }
+    }else{
+        return "Not leap year."
+    }
+
+/**************Don't change the code below****************/    
+
+}
