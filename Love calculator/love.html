@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Love Calculator</title>
+    <style>
+        body{
+            font-family: "Arial", sans-serif;
+            font-weight: 700;
+            font-size: 19px;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0;
+            padding: 20px;
+        }
+        .hero{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .info{
+            width: 40%;
+            text-align: justify;
+        }
+        .aboutDoctorLove{
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .data{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+        }
+        .names{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        input{
+            margin-top: 8px;
+            padding: 17px 30px;
+            border-radius: 30px;
+            border: none;
+            background-color: white;
+            opacity: 0.8;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-style: none;
+            outline: none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        input:focus{
+            border: none;
+        }
+        .btn{
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+            background: linear-gradient(90deg, #c7081f 0%, #ec5700 100%);
+            border-style: none;
+            padding: 20px 35px;
+            border-radius: 35px;
+            font-size: 18px;
+            color: white;
+        }
+        button:hover{
+            background: linear-gradient(90deg, #c7081f 0%, #ec5700 100%);
+            opacity: 0.94;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="lovecalculator-logo.svg" alt="lovecalculator-logo">
+        </div>
+        <div class="nav">
+            <p>About the Love Calculator</p>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="info">
+            <h2>Welcome to this great invention of Doctor Love!</h2>
+            <p class="aboutDoctorLove">
+            We all know that a name can tell a lot about a person. Names are not randomly chosen: they all have a meaning. Doctor Love knew this so he made another great invention just for the lonely you!
+            </p>
+            <p class="aboutDoctorLove">
+                Sometimes you'd like to know if a relationship with someone could work out. Therefore Doctor Love himself designed this great machine for you. With The Love Calculator you can calculate the probability of a successful relationship between two people. The Love Calculator is an affective way to get an impression of what the chances are on a relationship between two people.
+            </p>
+            <p class="aboutDoctorLove">
+                To find out what the chances for you and your dream partner are, just fill in both full names (both first and last name) in the two text boxes below, and press Calculate.
+            </p>
+        </div>
+
+        <div class="form">
+            <form action="">
+            <!-- <div class="data">
+                <div class="names">
+                    <label for="">Your name</label>
+                    <input type="text" placeholder="Full name" required>
+                </div>
+                <div class="names">
+                    <label for="">Your crush</label>
+                    <input type="text" placeholder="Full name" required>
+                </div>
+            </div> -->
+            <div class="btn">
+                <button type="submit" onclick="loveCalculator()">Calculate</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="love.js"></script>
+</body>
+</html>
