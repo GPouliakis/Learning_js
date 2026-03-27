@@ -1,4 +1,4 @@
-// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΚΑΝΕΙ ΚΕΦΑΛΑΙ ΤΟ 1ο ΓΡΑΜΜΑ ΚΑΙ ΟΛΑ ΤΑ ΥΠΟΛΟΙΠΑ ΠΕΖΑ
+// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΚΑΝΕΙ ΚΕΦΑΛΑΙO ΤΟ 1ο ΓΡΑΜΜΑ ΚΑΙ ΟΛΑ ΤΑ ΥΠΟΛΟΙΠΑ ΠΕΖΑ
 // Δημιουργείς ένα var που αποθηκεύει το όνομα που θα δώσει ο χρήστης
 // var name = prompt("What is your name?");
 
@@ -127,10 +127,10 @@ bmi should equal 20 when it's rounded to the nearest whole number.
 */
 
 
-
+// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΛΕΓΧΕΙ ΑΝ Ο ΧΡΟΝΟΣ ΕΙΝΑΙ ΔΙΣΕΚΤΟΣ Ή ΟΧΙ
+/*
 function isLeap(year) {
-    
-/**************Don't change the code above****************/    
+       
     
     //Write your code here.    
     if(year % 4 === 0){
@@ -146,7 +146,30 @@ function isLeap(year) {
     }else{
         return "Not leap year."
     }
+  
+}
+*/
 
-/**************Don't change the code below****************/    
+// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΛΕΓΧΕΙ ΑΝ ΤΟ ΟΝΟΜΑ ΥΠΑΡΧΕΙ ΣΤΟΝ ΠΙΝΑΚΑ ΚΑΙ ΜΕΤΑΤΡΕΠΕΙ ΤΟ 1ο ΓΡΑΜΜΑ ΑΠΟ ΠΕΖΟ ΣΕ ΚΕΦΑΛΑΙΟ
+var guestList = ["George", "Jim", "Kwstas", "Vasilis", "Giannis"];
+var guestName = prompt("What is your name?");
 
+//  Απομονώνεις το πρώτο γράμμα του ονόματος
+var firstChar = guestName.slice(0,1);
+
+// Μετατρέπεις το πρώτο γράμμα από πεζό σε κεφαλαίο
+var upperCaseFirstChar = firstChar.toUpperCase();
+
+//  Απομονώνεις το υπόλοιπο όνομα
+ var restOfName = guestName.slice(1,guestName.length);
+//  Μετατρέπει το υπόλοιπο όνομα σε πεζά
+ restOfName = restOfName.toLowerCase();
+
+//  Συνδέεις το πρώτο γράμμα με το υπόλοιπο όνομα
+ var capitalisedName = upperCaseFirstChar + restOfName;
+
+if(guestList.includes(capitalisedName)){
+    alert("welcome, " + capitalisedName);
+}else{
+    alert("You don't have an account");
 }
