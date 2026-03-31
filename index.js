@@ -22,7 +22,6 @@
 
 
 
-
 // ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΜΦΑΝΙΖΕΙ ΑΝΑΛΟΓΑ ΜΕ ΤΗΝ ΗΛΙΚΙΑ ΣΟΥ ΠΟΣΟ ΧΡΟΝΟ ΕΧΕΙΣ ΜΕΧΡΙ ΤΑ 90 
 
 /*
@@ -127,6 +126,7 @@ bmi should equal 20 when it's rounded to the nearest whole number.
 */
 
 
+
 // ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΛΕΓΧΕΙ ΑΝ Ο ΧΡΟΝΟΣ ΕΙΝΑΙ ΔΙΣΕΚΤΟΣ Ή ΟΧΙ
 /*
 function isLeap(year) {
@@ -150,7 +150,10 @@ function isLeap(year) {
 }
 */
 
+
+
 // ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΛΕΓΧΕΙ ΑΝ ΤΟ ΟΝΟΜΑ ΥΠΑΡΧΕΙ ΣΤΟΝ ΠΙΝΑΚΑ ΚΑΙ ΜΕΤΑΤΡΕΠΕΙ ΤΟ 1ο ΓΡΑΜΜΑ ΑΠΟ ΠΕΖΟ ΣΕ ΚΕΦΑΛΑΙΟ
+/*
 var guestList = ["George", "Jim", "Kwstas", "Vasilis", "Giannis"];
 var guestName = prompt("What is your name?");
 
@@ -173,3 +176,68 @@ if(guestList.includes(capitalisedName)){
 }else{
     alert("You don't have an account");
 }
+*/
+
+
+
+// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΠΡΟΣΘΕΤΕΙ ΚΑΤΑ 1 ΚΑΙ ΠΕΤΑΕΙ ΤΟ ΑΝΤΙΣΤΟΙΧΟ ΜΗΝΥΜΑ ΟΤΑΝ ΕΙΝΑΙ ΔΙΑΙΡΕΤΑΙΟ
+/*
+var output = [];
+var count = 1;
+
+function fizzBuzz(){
+
+    if(count % 3 === 0 && count % 5 ===0){
+        output.push("FizzBuzz");
+    }else if(count % 3 === 0){
+        output.push("Fizz");
+    }else if(count % 5 === 0){
+        output.push("Buzz");
+    }else{
+        output.push(count);
+    }
+
+    count++;
+    
+    console.log(output);
+}
+*/
+
+
+
+// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΠΙΛΕΓΕΙ ΤΥΧΑΙΑ ΓΙΑ ΤΟ ΠΟΙΟΣ ΘΑ ΠΛΗΡΩΣΕΙ
+/*
+function whosPaying(names) {
+    
+    var numberOfPeople = names.length;
+    var randomPosition = Math.floor(Math.random() * numberOfPeople);
+    
+    return names[randomPosition] + " is going to buy lunch today!";
+       
+}
+*/
+
+function fibonacciGenerator (n) {
+//Do NOT change any of the code above 👆
+    
+    //Write your code here:
+    var output = [];
+    if(n===1){
+        output = [0];
+        return output;
+    }else if(n===2){
+        output = [0, 1];
+        return output;
+    }else{
+        output = [0, 1];
+        for(var i=2; i<n; i++){
+            output.push(output[i-2] + output[i-1]);
+        }
+        return output;
+    }
+   
+    //Return an array of fibonacci numbers starting from 0.
+    
+//Do NOT change any of the code below 👇
+}
+
