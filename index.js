@@ -217,6 +217,7 @@ function whosPaying(names) {
 }
 */
 
+/*
 function fibonacciGenerator (n) {
 //Do NOT change any of the code above 👆
     
@@ -240,4 +241,45 @@ function fibonacciGenerator (n) {
     
 //Do NOT change any of the code below 👇
 }
+*/
 
+
+// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΡΙΧΝΕΙ ΤΥΧΑΙΕΣ ΖΑΡΙΕΣ ΑΠΟ ΟΣΑ ΖΗΤΗΣΕ Ο ΧΡΗΣΤΗΣ ΝΑ ΡΙΞΕΙ
+/*
+function rollDice(numberOfDice){
+
+    // ζηταει απο τον χρηστη ποσα ζαρια θελει να ρικει
+    numberOfDice = prompt("Πόσα ζάρια θες να ρίξεις; ");
+    
+    // δημιουργεις ενα αδειο πινακα
+    var output = [];
+    // δημιουργεις μια μεταβλητη για να αποθηκευει τον τυχαιο αριθμο
+    var diceRoll;
+    
+
+    for(var i=1; i<=numberOfDice; i++){
+        // πεταει εναν τυχαιο αριθμο το 1-6
+        diceRoll = Math.floor((Math.random()*6) + 1);
+        // σπρωχνει τον τυχαιο αριθμο στον πινακα
+        output.push(diceRoll);
+    }
+    // επιστρεφει τον πινακα
+    return output;
+}
+rollDice();
+*/
+
+//ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΛΕΓΧΕΙ ΤΙΣ ΗΛΙΚΙΕΣ ΚΑΙ ΕΜΦΑΝΙΖΕΙ ΜΗΝΥΜΑ ΑΝ ΠΕΡΝΑΣ Ή ΟΧΙ ΚΑΙ ΣΤΟ ΤΕΛΟΣ ΠΟΣΟΙ ΠΕΡΑΣΑΝ ΣΤΟ ΚΛΑΜΠ
+function filterAdults(ages){
+    
+    var adults = [];
+    
+    for(var i=0; i<ages.length; i++){
+        if(ages[i]>=18){
+            adults.push(ages[i]);
+        }
+    }
+    return adults;
+}
+
+filterAdults();
