@@ -272,14 +272,21 @@ rollDice();
 //ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΛΕΓΧΕΙ ΤΙΣ ΗΛΙΚΙΕΣ ΚΑΙ ΕΜΦΑΝΙΖΕΙ ΜΗΝΥΜΑ ΑΝ ΠΕΡΝΑΣ Ή ΟΧΙ ΚΑΙ ΣΤΟ ΤΕΛΟΣ ΠΟΣΟΙ ΠΕΡΑΣΑΝ ΣΤΟ ΚΛΑΜΠ
 function filterAdults(ages){
     
-    var adults = [];
-    
-    for(var i=0; i<ages.length; i++){
-        if(ages[i]>=18){
-            adults.push(ages[i]);
+    var currentAge;
+    var ageHistory = [];
+    var totalPassed = 0;
+
+    for(var i=0; i<ages; i++){
+        currentAge = prompt("What is your age? ");
+        if(currentAge>=18){
+            ageHistory.push(currentAge);
+            totalPassed++;
+            console.log("You can pass.");
+        }else{
+            console.log("You are underage, you can't pass.");
         }
     }
-    return adults;
+    console.log("The total number who passed today are " + totalPassed);
 }
 
-filterAdults();
+filterAdults(5);
