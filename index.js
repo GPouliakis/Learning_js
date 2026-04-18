@@ -1,292 +1,56 @@
-// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΚΑΝΕΙ ΚΕΦΑΛΑΙO ΤΟ 1ο ΓΡΑΜΜΑ ΚΑΙ ΟΛΑ ΤΑ ΥΠΟΛΟΙΠΑ ΠΕΖΑ
-// Δημιουργείς ένα var που αποθηκεύει το όνομα που θα δώσει ο χρήστης
-// var name = prompt("What is your name?");
+// Detecting Button Press
+var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
-// // Απομονώνεις το πρώτο γράμμα του ονόματος
-// var firstChar = name.slice(0,1);
-
-// // Μετατρέπεις το πρώτο γράμμα από πεζό σε κεφαλαίο
-// var upperCaseFirstChar = firstChar.toUpperCase();
-
-// // Απομονώνεις το υπόλοιπο όνομα
-// var restOfName = name.slice(1,name.length);
-
-// // Μετατρέπει το υπόλοιπο όνομα σε πεζά
-// restOfName = restOfName.toLowerCase();
-
-// // Συνδέεις το πρώτο γράμμα με το υπόλοιπο όνομα
-// var capitalisedName = upperCaseFirstChar + restOfName;
-
-// // Εμφανίζεις το αποτέλεσμα
-// alert("Hello " + capitalisedName);
-
-
-
-// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΜΦΑΝΙΖΕΙ ΑΝΑΛΟΓΑ ΜΕ ΤΗΝ ΗΛΙΚΙΑ ΣΟΥ ΠΟΣΟ ΧΡΟΝΟ ΕΧΕΙΣ ΜΕΧΡΙ ΤΑ 90 
-
-/*
-function lifeInWeeks (age){
-    var age = prompt("What is your age?");
-    var yearsRemaing = 90 - age;
-    var days = yearsRemaing * 365;
-    var weeks = yearsRemaing * 52;
-    var months = yearsRemaing * 12;
-
-    console.log ("You have " + days + " days or " + weeks + " weeks or " + months + " months left until 90.");
-}
-lifeInWeeks();
-*/
-
-
-
-/* ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΓΡΑΦΕΙ ΠΟΣΑ ΜΠΟΥΚΑΛΙΑ ΓΑΛΑ ΑΓΟΡΑΖΕΙ ΤΟ ΡΟΜΠΟΤ ΚΑΙ ΥΠΟΛΟΓΙΖΕΙ ΤΑ ΡΕΣΤΑ
-
-function getMilk(money){
-    console.log("leaveHouse");
-    console.log("moveRight");
-    console.log("moveRight");
-    console.log("moveuP");
-    console.log("moveuP");
-    console.log("moveuP");
-    console.log("moveuP");
-    console.log("moveRight");
-    console.log("moveRight");
-
-    // η συνάρτηση για τον υπολογισμό των μπουκαλιών
-    console.log("buy " + calcBottles(money, 1.5) +" bottles of milk");
-
-    console.log("moveLeft");
-    console.log("moveLeft");
-    console.log("moveDown");
-    console.log("moveDown");
-    console.log("moveDown");
-    console.log("moveDown");
-    console.log("moveLeft");
-    console.log("moveLeft");
-    console.log("enterHouse");
-
-    //χωρις συνάρτηση 
-    return money%1.5;
-    
-    //η συνάρτηση για τα ρέστα
-    return calcChange(money, 1.5);
-    
-}
-// η συνάρτηση για τον υπολογισμό μπουκαλιων που μπορεί να αγοράσει
-function calcBottles(startingMoney, costPerBottle){
-
-    var numOfBottles = Math.floor(startingMoney / costPerBottle);
-
-    return numOfBottles;
-}
-// η συνάρτηση για τον υπολογισμό από τα ρέστα που πρέπει να επιστραφούν
-function calcChange(startingAmount, costPerBottle){
-    var change = startingAmount % costPerBottle;
-    return change;
+for (var i = 0; i < numberOfDrumButtons; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+    var buttonInnerHTML = this.innerHTML;
+    makeSound(buttonInnerHTML);
+  });
 }
 
-// εμφανίζει το αποτέλεσμα με την 1 συνάρτηση
-getMilk(5);
+// Detecting Keyboard Press
+document.addEventListener("keypress", function (event) {
+  makeSound(event.key);
+});
 
-// εμφανίζει το αποτέλεσμα με τις 2 συναρτήσεις
-console.log("Hello sir, here is your " + getMilk(10) + " change");
-*/
+function makeSound(key) {
+  switch (key) {
+    case "w":
+      var snare = new Audio("sounds/snare.mp3");
+      snare.play();
+      break;
 
+    case "a":
+      var tom1 = new Audio("sounds/tom-1.mp3");
+      tom1.play();
+      break;
 
+    case "s":
+      var kick = new Audio("sounds/kick-bass.mp3");
+      kick.play();
+      break;
 
-//BMI CALCULATOR ME FUNCTION
+    case "d":
+      var tom2 = new Audio("sounds/tom-2.mp3");
+      tom2.play();
+      break;
 
-//Create your function below this line.
-//The first parameter should be the weight and the second should be the height.
+    case "j":
+      var tom3 = new Audio("sounds/tom-3.mp3");
+      tom3.play();
+      break;
 
-/*
-function bmiCalculator (weight, height) {
-    var bmi = Math.round(weight/(height*height));
-    
-    if(bmi<18.5){
-        return "Your BMI is " + bmi + ", so you are underweight."
-    }
-    if(bmi>=18.5 && bmi<=24.9){
-        return "Your BMI is " + bmi + ", so you have a normal weight."
-    }
-    if(bmi>24.9){
-        return "Your BMI is " + bmi + ", so you are overweight."
-    }
+    case "k":
+      var tom4 = new Audio("sounds/tom-4.mp3");
+      tom4.play();
+      break;
+
+    case "l":
+      var crash = new Audio("sounds/crash.mp3");
+      crash.play();
+      break;
+
+    default:
+      console.log(buttonInnerHTML);
+  }
 }
-var bmi=bmiCalculator(65, 1.8);
-console.log(bmi);
-*/
-
-/* If my weight is 65Kg and my height is 1.8m, I should be able to call your function like this:
-
-var bmi = bmiCalculator(65, 1.8); 
-
-bmi should equal 20 when it's rounded to the nearest whole number.
-
-*/
-
-
-
-// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΛΕΓΧΕΙ ΑΝ Ο ΧΡΟΝΟΣ ΕΙΝΑΙ ΔΙΣΕΚΤΟΣ Ή ΟΧΙ
-/*
-function isLeap(year) {
-       
-    
-    //Write your code here.    
-    if(year % 4 === 0){
-        if(year % 100 === 0){
-            if(year % 400 === 0){
-                return "Leap year."
-            }else{
-                return "Not leap year."
-            }
-        }else{
-            return "Leap year."
-        }
-    }else{
-        return "Not leap year."
-    }
-  
-}
-*/
-
-
-
-// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΛΕΓΧΕΙ ΑΝ ΤΟ ΟΝΟΜΑ ΥΠΑΡΧΕΙ ΣΤΟΝ ΠΙΝΑΚΑ ΚΑΙ ΜΕΤΑΤΡΕΠΕΙ ΤΟ 1ο ΓΡΑΜΜΑ ΑΠΟ ΠΕΖΟ ΣΕ ΚΕΦΑΛΑΙΟ
-/*
-var guestList = ["George", "Jim", "Kwstas", "Vasilis", "Giannis"];
-var guestName = prompt("What is your name?");
-
-//  Απομονώνεις το πρώτο γράμμα του ονόματος
-var firstChar = guestName.slice(0,1);
-
-// Μετατρέπεις το πρώτο γράμμα από πεζό σε κεφαλαίο
-var upperCaseFirstChar = firstChar.toUpperCase();
-
-//  Απομονώνεις το υπόλοιπο όνομα
- var restOfName = guestName.slice(1,guestName.length);
-//  Μετατρέπει το υπόλοιπο όνομα σε πεζά
- restOfName = restOfName.toLowerCase();
-
-//  Συνδέεις το πρώτο γράμμα με το υπόλοιπο όνομα
- var capitalisedName = upperCaseFirstChar + restOfName;
-
-if(guestList.includes(capitalisedName)){
-    alert("welcome, " + capitalisedName);
-}else{
-    alert("You don't have an account");
-}
-*/
-
-
-
-// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΠΡΟΣΘΕΤΕΙ ΚΑΤΑ 1 ΚΑΙ ΠΕΤΑΕΙ ΤΟ ΑΝΤΙΣΤΟΙΧΟ ΜΗΝΥΜΑ ΟΤΑΝ ΕΙΝΑΙ ΔΙΑΙΡΕΤΑΙΟ
-/*
-var output = [];
-var count = 1;
-
-function fizzBuzz(){
-
-    if(count % 3 === 0 && count % 5 ===0){
-        output.push("FizzBuzz");
-    }else if(count % 3 === 0){
-        output.push("Fizz");
-    }else if(count % 5 === 0){
-        output.push("Buzz");
-    }else{
-        output.push(count);
-    }
-
-    count++;
-    
-    console.log(output);
-}
-*/
-
-
-
-// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΠΙΛΕΓΕΙ ΤΥΧΑΙΑ ΓΙΑ ΤΟ ΠΟΙΟΣ ΘΑ ΠΛΗΡΩΣΕΙ
-/*
-function whosPaying(names) {
-    
-    var numberOfPeople = names.length;
-    var randomPosition = Math.floor(Math.random() * numberOfPeople);
-    
-    return names[randomPosition] + " is going to buy lunch today!";
-       
-}
-*/
-
-/*
-function fibonacciGenerator (n) {
-//Do NOT change any of the code above 👆
-    
-    //Write your code here:
-    var output = [];
-    if(n===1){
-        output = [0];
-        return output;
-    }else if(n===2){
-        output = [0, 1];
-        return output;
-    }else{
-        output = [0, 1];
-        for(var i=2; i<n; i++){
-            output.push(output[i-2] + output[i-1]);
-        }
-        return output;
-    }
-   
-    //Return an array of fibonacci numbers starting from 0.
-    
-//Do NOT change any of the code below 👇
-}
-*/
-
-
-// ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΡΙΧΝΕΙ ΤΥΧΑΙΕΣ ΖΑΡΙΕΣ ΑΠΟ ΟΣΑ ΖΗΤΗΣΕ Ο ΧΡΗΣΤΗΣ ΝΑ ΡΙΞΕΙ
-/*
-function rollDice(numberOfDice){
-
-    // ζηταει απο τον χρηστη ποσα ζαρια θελει να ρικει
-    numberOfDice = prompt("Πόσα ζάρια θες να ρίξεις; ");
-    
-    // δημιουργεις ενα αδειο πινακα
-    var output = [];
-    // δημιουργεις μια μεταβλητη για να αποθηκευει τον τυχαιο αριθμο
-    var diceRoll;
-    
-
-    for(var i=1; i<=numberOfDice; i++){
-        // πεταει εναν τυχαιο αριθμο το 1-6
-        diceRoll = Math.floor((Math.random()*6) + 1);
-        // σπρωχνει τον τυχαιο αριθμο στον πινακα
-        output.push(diceRoll);
-    }
-    // επιστρεφει τον πινακα
-    return output;
-}
-rollDice();
-*/
-
-//ΠΡΟΓΡΑΜΜΑ ΠΟΥ ΕΛΕΓΧΕΙ ΤΙΣ ΗΛΙΚΙΕΣ ΚΑΙ ΕΜΦΑΝΙΖΕΙ ΜΗΝΥΜΑ ΑΝ ΠΕΡΝΑΣ Ή ΟΧΙ ΚΑΙ ΣΤΟ ΤΕΛΟΣ ΠΟΣΟΙ ΠΕΡΑΣΑΝ ΣΤΟ ΚΛΑΜΠ
-function filterAdults(ages){
-    
-    var currentAge;
-    var ageHistory = [];
-    var totalPassed = 0;
-
-    for(var i=0; i<ages; i++){
-        currentAge = prompt("What is your age? ");
-        if(currentAge>=18){
-            ageHistory.push(currentAge);
-            totalPassed++;
-            console.log("You can pass.");
-        }else{
-            console.log("You are underage, you can't pass.");
-        }
-    }
-    console.log("The total number who passed today are " + totalPassed);
-}
-
-filterAdults(5);
